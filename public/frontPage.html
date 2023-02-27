@@ -14,6 +14,29 @@
 
     <button onclick="yesItsFriday()">Yes</button>
     
-    <script src="frontPage.js"></script>
+    <script>
+        const url = "http://localhost:8080/api/time"
+    let data;
+    fetch(url).then(response => response.json()).then(result => {
+        data = result.data
+    }).then(() => {
+        console.log(data)
+    })
+
+
+function yesItsFriday(){
+    const divDay = document.getElementById("divDay");
+    divDay.innerText = "";
+    const createP = document.createElement("p")
+        
+        if(data === 'friday'){
+            createP.innerText = `YES! Its ${data}`
+        }else{
+            createP.innerText = `No its not friday, its ${data} stupid`
+
+        }  
+        divDay.appendChild(createP);
+}
+    </script>
 </body>
 </html>
