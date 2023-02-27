@@ -7,7 +7,7 @@ let tis;
     })
 
 
-function isItFriday(){
+function yesItsFriday(){
     const divDay = document.getElementById("divDay");
     divDay.innerText = "";
     const createP = document.createElement("p")
@@ -15,11 +15,12 @@ function isItFriday(){
         if(tis === 'friday'){
             createP.innerText = `YES! Its ${tis}`
         }else{
-            createP.innerText = `No its not friday ${tis} stupid`
+            createP.innerText = `No its not friday, its ${tis} stupid`
 
         }  
         divDay.appendChild(createP);
 }
+
 
 
 
